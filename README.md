@@ -38,28 +38,27 @@ npm run backend
 
 **Interface para Montar o Pedido**
 <div align="center">
-<img src="https://github.com/Arturstriker3/Projeto-Burger-Vue/assets/59231364/2d0feeda-5b8f-480d-9ec3-ca0449f9ca86" width="auto" height="auto" />
+<img src="https://github.com/Arturstriker3/Projeto-Burger-Vue/assets/59231364/2d0feeda-5b8f-480d-9ec3-ca0449f9ca86" width="50px" height="50px" />
 </div>
 <p>Todos os dados referentes a montagem do burger vem da db.json</p>
 <br/>
 
 **Montando o Pedido**
 <div align="center">
-<img src="https://github.com/Arturstriker3/Projeto-Burger-Vue/assets/59231364/69b05c9a-06f6-4561-8cec-3f5c88779c23" width="auto" height="auto" />
+<img src="https://github.com/Arturstriker3/Projeto-Burger-Vue/assets/59231364/69b05c9a-06f6-4561-8cec-3f5c88779c23" width="50px" height="50px" />
 </div>
 <p>O pedido é feito em tempo real exibindo os ingredientes que vem do db.json</p>
 <br/>
 
 **Pedido Finalizado**
 <div align="center">
-<img src="https://github.com/Arturstriker3/Projeto-Burger-Vue/assets/59231364/3b3563b3-7f90-4f3b-a4f9-30f7164f7e68" width="auto" height="auto" />
+<img src="https://github.com/Arturstriker3/Projeto-Burger-Vue/assets/59231364/3b3563b3-7f90-4f3b-a4f9-30f7164f7e68" width="50px" height="50px" />
 </div>
 <p>O pedido é incrementado na db.json após a confirmção</p>
 <br/>
  
 **Autenticação Básica**
 <div align="center">
-<img src="https://user-images.githubusercontent.com/59231364/202910125-b8ea670f-0892-45c0-a663-d8c1d80e2b63.png" width="auto" height="auto" />
 <img src="https://user-images.githubusercontent.com/59231364/202910224-d3fb64cd-8c2e-4ba2-940b-ff298cb44567.png" width="auto" height="auto" />
 <img src="https://user-images.githubusercontent.com/59231364/202910249-6dd8745a-16f1-42c6-a7e3-3db88027ef6d.png" width="auto" height="auto" />
 </div>
