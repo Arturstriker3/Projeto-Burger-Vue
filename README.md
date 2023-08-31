@@ -74,6 +74,5 @@ npm run backend
 <p>Após estar autenticado é possível gerenciar os pedidos que foram realizados.</p>
 <br/>
 
-**Protótipo Interativo Netlify:**
-https://dazzling-trifle-656927.netlify.app/
+**Protótipo Netlify:** https://dazzling-trifle-656927.netlify.app/
 <br/>
