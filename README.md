@@ -1,4 +1,4 @@
-# projeto_hamburguer_vue
+# Projeto Burger Vue
 
 ## Project setup
 ```
@@ -38,7 +38,7 @@ npm run backend
 
 **Interface para Montar o Pedido**
 <div align="center">
-<img src="https://user-images.githubusercontent.com/59231364/202909924-f26c573e-e2b5-4c1b-8bb9-3bbf3d73307b.png" width="auto" height="auto" />
+<img src="https://github.com/Arturstriker3/Projeto-Burger-Vue/assets/59231364/2d0feeda-5b8f-480d-9ec3-ca0449f9ca86" width="auto" height="auto" />
 </div>
 <p>Todos os dados referentes a montagem do burger vem da db.json</p>
 <br/>
