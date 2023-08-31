@@ -1,0 +1,132 @@
+{
+  "ingredientes": {
+    "tamanhos": [
+      {
+        "id": 1,
+        "tipo": "Extra Grande (GG)",
+        "valor": 12
+      },
+      {
+        "id": 2,
+        "tipo": "Grande (G)",
+        "valor": 10
+      },
+      {
+        "id": 3,
+        "tipo": "Médio (M)",
+        "valor": 8
+      },
+      {
+        "id": 4,
+        "tipo": "Pequenho (P)",
+        "valor": 6
+      }
+    ],
+    "paes": [
+      {
+        "id": 1,
+        "tipo": "Italiano Branco",
+        "valor": 2
+      },
+      {
+        "id": 2,
+        "tipo": "3 Queijos",
+        "valor": 4
+      },
+      {
+        "id": 3,
+        "tipo": "Parmesão e Orégano",
+        "valor": 4
+      },
+      {
+        "id": 4,
+        "tipo": "Integral",
+        "valor": 3
+      }
+    ],
+    "carnes": [
+      {
+        "id": 1,
+        "tipo": "Maminha",
+        "valor": 10
+      },
+      {
+        "id": 2,
+        "tipo": "Alcatra",
+        "valor": 12
+      },
+      {
+        "id": 3,
+        "tipo": "Picanha",
+        "valor": 15
+      },
+      {
+        "id": 4,
+        "tipo": "Veggie burger",
+        "valor": 20
+      }
+    ],
+    "opcionais": [
+      {
+        "id": 1,
+        "tipo": "Bacon",
+        "valor": 1
+      },
+      {
+        "id": 2,
+        "tipo": "Cheddar",
+        "valor": 1
+      },
+      {
+        "id": 3,
+        "tipo": "Salame",
+        "valor": 1
+      },
+      {
+        "id": 4,
+        "tipo": "Tomate",
+        "valor": 1
+      },
+      {
+        "id": 4,
+        "tipo": "Cebola roxa",
+        "valor": 1
+      },
+      {
+        "id": 4,
+        "tipo": "Pepino",
+        "valor": 1
+      }
+    ]
+  },
+  "status": [
+    {
+      "id": 1,
+      "tipo": "Solicitado"
+    },
+    {
+      "id": 2,
+      "tipo": "Em produção"
+    },
+    {
+      "id": 3,
+      "tipo": "Finalizado"
+    }
+  ],
+  "burgers": [
+    {
+      "nome": "Artur Daniel",
+      "tamanho": "Extra Grande (GG)",
+      "carne": "Picanha",
+      "pao": "3 Queijos",
+      "preco": 34,
+      "opcionais": [
+        "Cheddar",
+        "Cebola roxa",
+        "Tomate"
+      ],
+      "status": "Em produção",
+      "id": 1
+    }
+  ]
+}
