@@ -30,6 +30,7 @@ npm run backend
 * Linguagem JavaScript;
 * FrameWork Vuejs;
 * Biblioteca Vuex para Vue.js ;
+* Biblioteca Vue Router para Vue.js ;
 
 **Visual Demonstrativo**
 <div align="center">
@@ -71,3 +72,8 @@ npm run backend
 <img src="https://github.com/Arturstriker3/Projeto-Burger-Vue/assets/59231364/3a1db56c-433d-4d1e-9e10-c6a868dc8724" width="auto" height="auto" />
 </div>
 <p>Após estar autenticado é possível gerenciar os pedidos que foram realizados.</p>
+<br/>
+
+**Protótipo Interativo Stackblitz**
+
+<br/>
