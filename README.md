@@ -1,4 +1,4 @@
-# Projeto Burger Vue
+# Projeto Burger Vue com Integração via API
 
 ## Project setup
 ```
@@ -24,6 +24,7 @@ npm run backend
  
  Nesse projeto o foco foi desenvolver uma ferramente que permita o aprimoramento
  do gerenciamento interno de um modelo de negócio proximo a de uma lanchonete.
+ Nessa branch foi utilizado axios para integrar com Api feita com Node.js
  
  **O que utilizei**
 * HTML e CSS;
@@ -31,6 +32,7 @@ npm run backend
 * FrameWork Vuejs;
 * Biblioteca Vuex para Vue.js ;
 * Biblioteca Vue Router para Vue.js ;
+* Biblioteca Axios para integração via Api ;
 
 **Visual Demonstrativo**
 <div align="center">
@@ -75,4 +77,6 @@ npm run backend
 <br/>
 
 **Protótipo Netlify:** https://dazzling-trifle-656927.netlify.app/
+**Api Node.js Link 1:** https://glitch.com/edit/#!/extreme-odd-inspiration
+**Api Node.js Link 2:** https://github.com/Arturstriker3/Api-BurgerVue
 <br/>
