@@ -48,8 +48,8 @@
 </template>
 
 <script>
-import Message from "../components/Message.vue"
-import { mapState, mapMutations } from 'vuex'
+import Message from "../components/Message.vue";
+import axios from "axios";
 
 export default {
   name: "BurgerForm",
@@ -58,32 +58,28 @@ export default {
     preco() {
       let total = 0.0;
 
-      // Adiciona o valor do tamanho do lanche
       if (this.tamanho) {
         const tamanhoSelecionado = this.tamanhos.find(tamanho => tamanho.tipo === this.tamanho);
         total += tamanhoSelecionado.valor;
       }
 
-      // Adiciona o valor do pão
       if (this.pao) {
         const paoSelecionado = this.paes.find(pao => pao.tipo === this.pao);
         total += paoSelecionado.valor;
       }
 
-      // Adiciona o valor da carne
       if (this.carne) {
         const carneSelecionada = this.carnes.find(carne => carne.tipo === this.carne);
         total += carneSelecionada.valor;
       }
 
-      // Adiciona o valor dos opcionais
       this.opcionais.forEach(opcional => {
         const opcionalSelecionado = this.opcionaisdata.find(opc => opc.tipo === opcional);
         total += opcionalSelecionado.valor;
       });
 
-      return total;
-    }
+      return total.toFixed(2); // Arredonda o valor para 2 casas decimais
+    },
   },
 
   data() {
@@ -99,69 +95,72 @@ export default {
       opcionais: [],
       status: "Solicitado",
       msg: null,
-    }
+    };
   },
 
   methods: {
-
     async getIngredientes() {
-      const req = await fetch('http://localhost:3000/ingredientes')
-      const data = await req.json()
+      try {
+        const response = await axios.get("https://extreme-odd-inspiration.glitch.me/api/ingredientes");
+        const data = response.data;
 
-      this.tamanhos = data.tamanhos
-      this.paes = data.paes
-      this.carnes = data.carnes
-      this.valor = data.valor
-      this.opcionaisdata = data.opcionais
+        this.tamanhos = data.tamanhos;
+        this.paes = data.paes;
+        this.carnes = data.carnes;
+        this.opcionaisdata = data.opcionais;
+      } catch (error) {
+        console.error("Erro ao buscar ingredientes:", error);
+      }
     },
-    async createBurger(e) {
 
-      e.preventDefault()
+    async createBurger(e) {
+      e.preventDefault();
 
       const data = {
         nome: this.nome,
         tamanho: this.tamanho,
         carne: this.carne,
         pao: this.pao,
-        preco: this.preco,
+        preco: parseFloat(this.preco), // Converter para float
         opcionais: Array.from(this.opcionais),
-        status: "Solicitado"
+        status: "Solicitado",
+      };
+
+      try {
+        const response = await axios.post("https://extreme-odd-inspiration.glitch.me/api/burgers", data, {
+          headers: { "Content-Type": "application/json" },
+        });
+
+        const res = response.data;
+
+        console.log(res);
+
+        this.msg = `Pedido Nº ${res.id} realizado com sucesso!`;
+
+        // Limpar a mensagem após 3 segundos
+        setTimeout(() => (this.msg = ""), 3000);
+
+        // Limpar campos do formulário
+        this.nome = "";
+        this.tamanho = "";
+        this.carne = "";
+        this.pao = "";
+        this.preco = 0.0; // Redefinir preco para 0.0 após criar o burger com sucesso
+        this.opcionais = [];
+      } catch (error) {
+        console.error("Erro ao criar o burger:", error);
       }
-
-      const dataJson = JSON.stringify(data)    
-
-      const req = await fetch("http://localhost:3000/burgers", {
-        method: "POST",
-        headers: { "Content-Type" : "application/json" },
-        body: dataJson
-      });
-
-      const res = await req.json()
-
-      console.log(res)
-
-      this.msg = `Pedido Nº ${res.id} realizado com sucesso!`;
-
-      // clear message
-      setTimeout(() => this.msg = "", 3000)
-
-      // limpar campos
-      this.nome = ""
-      this.tamanho = ""
-      this.carne = ""
-      this.pao = ""
-      this.preco = ""
-      this.opcionais = []
-      
-    }
+    },
   },
-  mounted () {
-    this.getIngredientes()
+
+  mounted() {
+    this.getIngredientes();
   },
+
   components: {
     Message,
-  }
-}
+  },
+};
 </script>
 
 <style scoped>

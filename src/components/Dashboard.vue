@@ -44,83 +44,77 @@
 </template>
 
 <script>
-import Message from "./Message.vue"
+import Message from "./Message.vue";
+import axios from 'axios';
 
-  export default {
-    name: "Dashboard",
-    data() {
-      return {
-        burgers: null,
-        burger_id: null,
-        status: [],
-        msg: null,
-      }
-    },
-    components: {
-        Message
-    },
-    methods: {
-      async getPedidos() {
-        const req = await fetch('http://localhost:3000/burgers')
-
-        const data = await req.json()
-
-        this.burgers = data
+export default {
+  name: "Dashboard",
+  data() {
+    return {
+      burgers: null,
+      burger_id: null,
+      status: [],
+      msg: null,
+    };
+  },
+  components: {
+    Message,
+  },
+  methods: {
+    async getPedidos() {
+      try {
+        const response = await axios.get('https://extreme-odd-inspiration.glitch.me/api/burgers'); // Use o Axios para fazer a solicitação GET
+        this.burgers = response.data;
 
         // Resgata os status de pedidos
-        this.getStatus()
-
-      },
-      async getStatus() {
-
-        const req = await fetch('http://localhost:3000/status')
-
-        const data = await req.json()
-
-        this.status = data
-
-      },
-      async deleteBurger(id) {
-
-        const req = await fetch(`http://localhost:3000/burgers/${id}`, {
-          method: "DELETE"
-        });
-
-        const res = await req.json()
-
-        this.msg = `Pedido removido com sucesso!`;
-
-        // clear message
-        setTimeout(() => this.msg = "", 3000)
-
-        this.getPedidos()
-
-      },
-      async updateBurger(event, id) {
-
-        const option = event.target.value;
-
-        const dataJson = JSON.stringify({status: option});
-
-        const req = await fetch(`http://localhost:3000/burgers/${id}`, {
-          method: "PATCH",
-          headers: { "Content-Type" : "application/json" },
-          body: dataJson
-        });
-
-        const res = await req.json()
-
-        this.msg = `Pedido Nº ${res.id} foi atualizado para ${res.status}!`;
-
-        // clear message
-        setTimeout(() => this.msg = "", 3000)
-
+        this.getStatus();
+      } catch (error) {
+        console.error('Erro ao buscar pedidos:', error);
       }
     },
-    mounted () {
-    this.getPedidos()
-    }
-  }
+    async getStatus() {
+      try {
+        const response = await axios.get('https://extreme-odd-inspiration.glitch.me/api/status'); // Use o Axios para fazer a solicitação GET
+        this.status = response.data;
+      } catch (error) {
+        console.error('Erro ao buscar status:', error);
+      }
+    },
+    async deleteBurger(id) {
+      try {
+        const response = await axios.delete(`https://extreme-odd-inspiration.glitch.me/api/burgers/${id}`);
+        this.msg = `Pedido removido com sucesso!`;
+
+        // Limpa a mensagem após 3 segundos
+        setTimeout(() => (this.msg = ''), 3000);
+
+        this.getPedidos();
+      } catch (error) {
+        console.error('Erro ao excluir pedido:', error);
+      }
+    },
+    async updateBurger(event, id) {
+      const option = event.target.value;
+      const data = { status: option };
+
+      try {
+        const response = await axios.patch(`http://localhost:3000/api/burgers/${id}`, data, {
+          headers: { 'Content-Type': 'application/json' },
+        });
+
+        this.msg = `Pedido Nº ${response.data.id} foi atualizado para ${response.data.status}!`;
+
+        // Limpa a mensagem após 3 segundos
+        setTimeout(() => (this.msg = ''), 3000);
+      } catch (error) {
+        console.error('Erro ao atualizar pedido:', error);
+      }
+    },
+  },
+  mounted() {
+    this.getPedidos();
+  },
+};
 </script>
 
 <style scoped>
@@ -130,7 +124,6 @@ import Message from "./Message.vue"
   }
 
   #burger-table-heading,
-  #burger-table-rows,
   .burger-table-row {
     display: flex;
     flex-wrap: nowrap;
