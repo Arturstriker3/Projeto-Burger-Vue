@@ -67,6 +67,7 @@ npm run serve
 <p>Após estar autenticado é possível gerenciar os pedidos que foram realizados.</p>
 <br/>
 
+* **Protótipo interativo:** https://glitch.com/edit/#!/extreme-odd-inspiration
 * **Api Node.js Link 1:** https://glitch.com/edit/#!/extreme-odd-inspiration
 * **Api Node.js Link 2:** https://railway.app/project/81f43fc8-b1c2-4732-b7f6-52b6b2423bb5/service/771d8372-f626-4364-ae30-54a9495b077e
 <br/>
