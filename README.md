@@ -10,15 +10,6 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-### Compiles db.json 
-```
-npm run backend
-```
-
 ### Faça seu Hamburguer é um projeto baseado no funcionamento de uma lanchonete. 
  
  
