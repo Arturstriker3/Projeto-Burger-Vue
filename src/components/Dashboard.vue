@@ -63,7 +63,7 @@ export default {
   methods: {
     async getPedidos() {
       try {
-        const response = await axios.get('https://extreme-odd-inspiration.glitch.me/api/burgers'); // Use o Axios para fazer a solicitação GET
+        const response = await axios.get('https://api-burgervue-production.up.railway.app/api/burgers'); // Usa o Axios para fazer a solicitação GET
         this.burgers = response.data;
 
         // Resgata os status de pedidos
@@ -74,7 +74,7 @@ export default {
     },
     async getStatus() {
       try {
-        const response = await axios.get('https://extreme-odd-inspiration.glitch.me/api/status'); // Use o Axios para fazer a solicitação GET
+        const response = await axios.get('https://api-burgervue-production.up.railway.app/api/status'); // Usa o Axios para fazer a solicitação GET
         this.status = response.data;
       } catch (error) {
         console.error('Erro ao buscar status:', error);
@@ -82,7 +82,7 @@ export default {
     },
     async deleteBurger(id) {
       try {
-        const response = await axios.delete(`https://extreme-odd-inspiration.glitch.me/api/burgers/${id}`);
+        const response = await axios.delete(`https://api-burgervue-production.up.railway.app/api/burgers/${id}`);
         this.msg = `Pedido removido com sucesso!`;
 
         // Limpa a mensagem após 3 segundos
@@ -98,7 +98,7 @@ export default {
       const data = { status: option };
 
       try {
-        const response = await axios.patch(`http://localhost:3000/api/burgers/${id}`, data, {
+        const response = await axios.patch(`https://api-burgervue-production.up.railway.app/api/burgers/${id}`, data, {
           headers: { 'Content-Type': 'application/json' },
         });
 

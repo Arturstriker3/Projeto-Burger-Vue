@@ -101,7 +101,7 @@ export default {
   methods: {
     async getIngredientes() {
       try {
-        const response = await axios.get("https://extreme-odd-inspiration.glitch.me/api/ingredientes");
+        const response = await axios.get("https://api-burgervue-production.up.railway.app/api/ingredientes");
         const data = response.data;
 
         this.tamanhos = data.tamanhos;
@@ -127,7 +127,7 @@ export default {
       };
 
       try {
-        const response = await axios.post("https://extreme-odd-inspiration.glitch.me/api/burgers", data, {
+        const response = await axios.post("https://api-burgervue-production.up.railway.app/api/burgers", data, {
           headers: { "Content-Type": "application/json" },
         });
 
