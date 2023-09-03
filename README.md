@@ -76,7 +76,9 @@ npm run backend
 <p>Após estar autenticado é possível gerenciar os pedidos que foram realizados.</p>
 <br/>
 
+<div align="center">
 **Protótipo Netlify:** https://dazzling-trifle-656927.netlify.app/
 **Api Node.js Link 1:** https://glitch.com/edit/#!/extreme-odd-inspiration
 **Api Node.js Link 2:** https://github.com/Arturstriker3/Api-BurgerVue
+</div>
 <br/>
